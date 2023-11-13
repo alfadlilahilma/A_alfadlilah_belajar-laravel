@@ -14,4 +14,8 @@ class HomeController extends Controller
     {
         return view('biodata');
     }
+    public function admin()
+    {
+        return view('admin');
+    }
 }
