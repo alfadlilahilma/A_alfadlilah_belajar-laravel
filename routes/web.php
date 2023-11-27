@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\HomeController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,10 +12,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Auth::routes();
 
-Route::get('/', function () {
-    return view('layout.admin');
-});
-Route::get('/hello',[HomeController::class,'index']);
-Route::get('/biodata',[HomeController::class,'biodata']);
-Route::get('/admin',[HomeController::class,'admin']);
+
+
+Route::get('/',[\App\Http\Controllers\HomeController::class,'admin']);
+
+Route::get('/category',[\App\Http\Controllers\Categorycontroller::class,'index']);
+Route::get('/product',[\App\Http\Controllers\Productcontroller::class,'index']);
+
